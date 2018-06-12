@@ -14,8 +14,6 @@ class Personne {
     
     public function getId() {
         return $this->idPers;
-    }
-    
-    
+    }    
     
 }
