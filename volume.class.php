@@ -9,7 +9,7 @@ class Volume {
         return $this->idVolume;
     }    
     
-    public function getVolume($id) {
+    public static function getVolume($id) {
         $volume = myPDO::getInstance()->prepare('SELECT * 
                                                 FROM volume 
                                                 WHERE idVolume = :id');
