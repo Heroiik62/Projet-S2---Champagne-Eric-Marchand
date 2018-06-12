@@ -15,4 +15,6 @@ class Produit {
         return $this->idProduit;
     }    
     
+    
+    
 }
