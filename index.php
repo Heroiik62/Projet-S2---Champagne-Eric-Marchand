@@ -1,4 +1,6 @@
-<!DOCTYPE html>
+<?php
+
+$html ='<!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="utf-8">
@@ -10,6 +12,31 @@
     </head>
 
     <body class="text-center">
+
+        <div class="modal fade" id="avertissement" tabindex="-1" role="dialog" aria-labelledby="ageAvertissment" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Logo eric marchand</h5>
+                    </div>
+                    <div class="modal-body">
+                        <form>';
+
+$year = date("Y");
+$html .='<select>';
+for($yearMinusHundred = $year; $yearMinusHundred >= $year - 100; $yearMinusHundred--) {
+    $html .= '<option value="' . $yearMinusHundred . '">' . $yearMinusHundred . '</option>';
+}
+$html .= '</select>';
+
+$html .='                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary">Entrer</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
             <header class="masthead mb-auto">
@@ -38,13 +65,6 @@
                                     <a class="nav-link" href="#">Galerie</a>
                                 </li>
                                 <li class="nav-item">
-                                    <select id="monselect">
-                                        <option value="valeur1">Pays / Country</option> 
-                                        <option value="valeur1" selected>France</option> 
-                                        <option value="valeur2">United Kingdom</option>
-                                    </select>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
                                 </li>
                             </ul>
@@ -67,8 +87,12 @@
                 </div>
             </footer>
         </div>
+
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="js/js.js"></script>
     </body>
-</html>
+</html>';
+
+echo $html;
