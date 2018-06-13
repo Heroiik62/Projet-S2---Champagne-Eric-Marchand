@@ -1,3 +1,46 @@
 body {
 	width: 100%;
+    background-color: #212529;
+    color: white;
+    
+}
+
+.nav-item {
+    margin-left: 0% 10% 0% 10%;
+}
+
+.nav-item:hover { 
+    border-top: 3px solid #CFB53B;
+    transition: border-top 100ms;
+}
+
+.nav-link:hover {
+    color: #CFB53B !important;
+    transition: color 300ms
+}
+
+.active {
+    color: #CFB53B !important;
+    border-top: 3px solid #CFB53B;
+}
+
+.active > a {
+    color: #CFB53B !important;
+}
+
+.navbar {
+    padding: 0px;
+}
+
+.nav-item:nth-child(n+2) {
+    border-left: 2px solid white;
+}
+
+.modal-content {
+    background-color: #343a40!important;
+    border-radius: 0px;
+}
+
+.modal-footer, .modal-header {
+    border: 0px solid black;
 }
