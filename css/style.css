@@ -25,6 +25,14 @@ body > .container {
     margin: 0 0 0 0;
 }
 
+.carousel-caption {
+    position: unset!important;
+}
+
+.btn-dark {
+    background-color: #212529;
+}
+
 .nav-item:hover { 
     border-top: 3px solid #CFB53B;
     transition: border-top 100ms;

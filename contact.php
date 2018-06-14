@@ -57,7 +57,7 @@ $html .= '</div>
 
                         <div class="collapse navbar-collapse col-md-12" id="navbarSupportedContent">
                             <ul class="navbar-nav mr-auto col-md-12">
-                                <li class="nav-item active text-center col-md-2">
+                                <li class="nav-item text-center col-md-2">
                                     <a class="nav-link" href="index.php"><i class="fas fa-home"></i></a>
                                 </li>
                                 <li class="nav-item text-center col-md-2">
@@ -66,7 +66,7 @@ $html .= '</div>
                                 <li class="nav-item text-center col-md-2">
                                     <a class="nav-link" href="#">Histoire</a>
                                 </li>
-                                <li class="nav-item text-center col-md-2">
+                                <li class="nav-item active text-center col-md-2">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
                                 <li class="nav-item text-center col-md-2">
@@ -82,73 +82,49 @@ $html .= '</div>
             </header>
 
             <main role="main" class="inner cover">
-                <div id="sliderAccueil" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#sliderAccueil" data-slide-to="0" class="active"></li>
-                        <li data-target="#sliderAccueil" data-slide-to="1"></li>
-                        <li data-target="#sliderAccueil" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="img/grappe.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="http://archeochampagne.epernay.fr/wp-content/uploads/8_caves-de-lavenue-de-champagne_michel-jolyot-1923x580.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="http://ca.france.fr/sites/default/files/imagecache/ATF_Image_bandeau_v2/istock_champagne_ina_peters_5.jpg" alt="Third slide">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#sliderAccueil" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Précédent</span>
-                    </a>
-                    <a class="carousel-control-next" href="#sliderAccueil" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Suivant</span>
-                    </a>
-                </div>
-
                 <div class="jumbotron jumbotron-fluid ">
-                    <div class="container col-md-12">
-                        <h1 class="display-4">Nos vins et cépages :</h1>
-                        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-
-                        <div id="sliderChampagne" class="carousel slide offset-md-5 col-md-2" data-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img width="100px" class="" src="https://www.ruinart.com/sites/ruinart/files/2018-04/Ruinart-BlancDeBlancs-75-NK-T-OP-ERetailKit-123_728-1992.png" alt="First slide">
-                                    <div class="carousel-caption d-md-block">
-                                        <button type="button" class="btn btn-dark">Info...</button>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img width="100px" class="" src="https://www.ruinart.com/sites/ruinart/files/2018-04/Ruinart-BlancDeBlancs-75-NK-T-OP-ERetailKit-123_728-1992.png" alt="Second slide">
-                                    <div class="carousel-caption d-md-block">
-                                        <button type="button" class="btn btn-dark">Info...</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#sliderChampagne" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Précédent</span>
-                            </a>
-                            <a class="carousel-control-next" href="#sliderChampagne" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Suivant</span>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-
-                <div class="jumbotron jumbotron-fluid row">
                     <div class="container">
-                        <h1 class="display-4">L'histoire du Champagne Éric Marchand :</h1>
-                        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                        <h1 class="display-4">Où nous trouver ?</h1>
+                        <p class="lead">Nous sommes à ...km de Reims...</p>
+                        <iframe width="100%" height="400vh" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDF16u2-AcikeQ6v18-x_TFcxSoCXIKkpk&q=Champage+Eric+Marchand,Faverolles+et+Coemy" allowfullscreen></iframe>
                     </div>
                 </div>
-
+                
+                <div class="jumbotron jumbotron-fluid ">
+                    <div class="container">
+                        <h1 class="display-4">Nous contacter / commander</h1>
+                        <p class="lead">e.......</p>
+                        <form>
+                            <div class="form-row">
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" placeholder="Nom" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" placeholder="Prénom" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input class="form-control" type="email" placeholder="Adresse email" required>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <input type="text" class="form-control" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$" placeholder="Téléphone" required>
+                                </div>
+                                <div class="form-group col-md-4">
+                                    <input type="text" class="form-control" placeholder="Adresse" required>
+                                </div>
+                                <div class="form-group col-md-1">
+                                    <input type="text" class="form-control" pattern="[0-9]{1,4}"  placeholder="N° Bat">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <input type="text" class="form-control" placeholder="Ville" required>
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <input type="text" class="form-control" pattern="[0-9]{5}" placeholder="Code postal" required>
+                                </div>
+                                <button class="btn btn-primary" type="submit">Submit form</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </main>
 
             <footer class="mastfoot mt-auto">
