@@ -83,11 +83,29 @@ $html .= '</div>
 
             <main role="main" class="inner cover">
                 <div class="jumbotron jumbotron-fluid row">
+                    <div class="modal fade" id="enlargeImageModal" tabindex="-1" role="dialog" aria-labelledby="enlargeImageModal" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                </div>
+                                <div class="modal-body">
+                                    <img src="" class="enlargeImageModalSource" style="width: 100%;">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="container col-md-12">
+                       <h1 class="display-4">Galerie d'images :</h1>
+                        <p class="lead">Voici les photos prise lors d'évènements...</p>
                         <img src="img/vigne1.jpg" alt="vigne" class="col-md-3 img-thumbnail">
                         <img src="img/vigne4.jpg" alt="vigne" class="col-md-3 img-thumbnail">
                         <img src="img/vigne3.jpg" alt="vigne" class="col-md-3 img-thumbnail">
-                        <img src="img/vigne3.jpg" alt="vigne" class="col-md-3 img-thumbnail">
+                        <img src="img/vigne2.jpg" alt="vigne" class="col-md-3 img-thumbnail">
+                    </div>
+                    <div class="container col-md-12">
+                        <img src="img/medaille.jpg" alt="medaille" class="col-md-3 img-thumbnail">
+                        <img src="img/grappe.jpg" alt="grappe" class="col-md-3 img-thumbnail">
                     </div>
                 </div>
             </main>

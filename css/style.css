@@ -16,6 +16,23 @@ body > .container {
     margin: 2% 2% 2% 2%;
     width: 250px;
     height: 250px;
+    cursor: zoom-in;
+}
+
+.text-muted {
+    color: white!important;
+}
+
+form > * {
+    padding: 4% 0 4% 0;
+}
+
+.modal-footer{
+    justify-content: center;
+}
+
+p {
+    margin: 0 0 0 0;
 }
 
 i {
@@ -83,6 +100,7 @@ footer {
 .modal-content {
     background-color: #343a40!important;
     border-radius: 0px;
+    padding: 2% 0 2% 0;
 }
 
 .modal-footer, .modal-header {
