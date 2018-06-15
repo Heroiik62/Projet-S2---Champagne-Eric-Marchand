@@ -66,10 +66,10 @@ $html .= '</div>
                                 <li class="nav-item text-center col-md-2">
                                     <a class="nav-link" href="#">Histoire</a>
                                 </li>
-                                <li class="nav-item active text-center col-md-2">
+                                <li class="nav-item text-center col-md-2">
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
-                                <li class="nav-item text-center col-md-2">
+                                <li class="nav-item active text-center col-md-2">
                                     <a class="nav-link" href="galerie.php">Galerie</a>
                                 </li>
                                 <li class="nav-item text-center col-md-2">
@@ -82,47 +82,12 @@ $html .= '</div>
             </header>
 
             <main role="main" class="inner cover">
-                <div class="jumbotron jumbotron-fluid ">
-                    <div class="container">
-                        <h1 class="display-4">Où nous trouver ?</h1>
-                        <p class="lead">Nous sommes à ...km de Reims...</p>
-                        <iframe width="100%" height="400vh" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDF16u2-AcikeQ6v18-x_TFcxSoCXIKkpk&q=Champage+Eric+Marchand,Faverolles+et+Coemy" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <div class="jumbotron jumbotron-fluid ">
-                    <div class="container">
-                        <h1 class="display-4">Nous contacter / commander</h1>
-                        <p class="lead">e.......</p>
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <input type="text" class="form-control" placeholder="Nom" required>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <input type="text" class="form-control" placeholder="Prénom" required>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <input class="form-control" type="email" placeholder="Adresse email" required>
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <input type="text" class="form-control" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$" placeholder="Téléphone" required>
-                                </div>
-                                <div class="form-group col-md-4">
-                                    <input type="text" class="form-control" placeholder="Adresse" required>
-                                </div>
-                                <div class="form-group col-md-1">
-                                    <input type="text" class="form-control" pattern="[0-9]{1,4}"  placeholder="N° Bat">
-                                </div>
-                                <div class="form-group col-md-2">
-                                    <input type="text" class="form-control" placeholder="Ville" required>
-                                </div>
-                                <div class="form-group col-md-2">
-                                    <input type="text" class="form-control" pattern="[0-9]{5}" placeholder="Code postal" required>
-                                </div>
-                                <button class="btn btn-primary" type="submit">Submit form</button>
-                            </div>
-                        </form>
+                <div class="jumbotron jumbotron-fluid row">
+                    <div class="container col-md-12">
+                        <img src="img/vigne1.jpg" alt="vigne" class="col-md-3 img-thumbnail">
+                        <img src="img/vigne4.jpg" alt="vigne" class="col-md-3 img-thumbnail">
+                        <img src="img/vigne3.jpg" alt="vigne" class="col-md-3 img-thumbnail">
+                        <img src="img/vigne3.jpg" alt="vigne" class="col-md-3 img-thumbnail">
                     </div>
                 </div>
             </main>

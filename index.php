@@ -70,7 +70,7 @@ $html .= '</div>
                                     <a class="nav-link" href="contact.php">Contact</a>
                                 </li>
                                 <li class="nav-item text-center col-md-2">
-                                    <a class="nav-link" href="#">Galerie</a>
+                                    <a class="nav-link" href="galerie.php">Galerie</a>
                                 </li>
                                 <li class="nav-item text-center col-md-2">
                                     <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
@@ -151,9 +151,11 @@ $html .= '</div>
 
             </main>
 
-            <footer class="mastfoot mt-auto">
-                <div class="inner">
-                    <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+            <footer class="mastfoot s h-100 row">
+                <div class="inner container">
+                    <p id="socialnet"><a class="text-center col-md-4" href="https://www.facebook.com/Champagne-Eric-Marchand-653088821528194/" target="_blank"><i class="fab fa-facebook-square fa-1x"></i></a><i class="fab fa-1x fa-instagram"></i><i class="fab fa-1x fa-twitter"></i><i class="fab fa-1x fa-google-plus-g"></i></p>
+                    <p class="text-center offset-md-4 col-md-4">Copyright 2018 Champagne Éric Marchand</p>
+                    <p class="text-center offset-md-4 col-md-4">Tous droits réservés • Mentions Légales</p>
                 </div>
             </footer>
         </div>

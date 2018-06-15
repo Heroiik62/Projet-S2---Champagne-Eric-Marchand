@@ -12,8 +12,24 @@ body > .container {
     padding: 0 0 0 0;
 }
 
+.img-thumbnail {
+    margin: 2% 2% 2% 2%;
+    width: 250px;
+    height: 250px;
+}
+
+i {
+    padding: 2% 1% 0 1%;
+    color: white;
+}
+
+footer {
+    background-color: #343a40!important;
+}
+
 .jumbotron {
-    background-color: #343a40!important
+    background-color: #343a40!important;
+    margin-bottom: 0;
 }
 
 .carousel-inner{
@@ -23,6 +39,10 @@ body > .container {
 
 .row {
     margin: 0 0 0 0;
+}
+
+.jumbotron-fluid {
+    margin: 2% 0 2% 0;
 }
 
 .carousel-caption {
