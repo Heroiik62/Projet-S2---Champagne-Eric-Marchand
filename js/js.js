@@ -5,6 +5,7 @@ function verify() {
     }
     else {
         $('#avertissement').modal('hide');
+        localStorage.setItem('shopping-cart', 0);
         localStorage.setItem('hasMajority', true);
     }
 };
