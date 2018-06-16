@@ -4,7 +4,7 @@ require_once 'vendor/autoload.php';
 
 $isEmailSent = "";
 
-if (isset($_POST) && !is_null($_POST)) {
+if (count($_POST) !== 0 && !is_null($_POST)) {
     $isEmailSent =<<<HTML
 <div class="col-sm-12 alert alert-danger alert-dismissible show">
     <span>Erreur, votre email n'a pas pu être envoyé, veuillez réessayer plus tard</span>
