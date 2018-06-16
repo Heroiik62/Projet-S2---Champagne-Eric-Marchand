@@ -1,4 +1,17 @@
+function verify() {
+    var no = Number(document.getElementById("age").value);
+    if (no < 18 || Number.isNaN(no)) {
+        document.getElementById("ageUnder").innerText = "Désolé, mais vous devez avoir 18 ans pour acceder a ce site web.";
+    }
+    else {
+        $('#avertissement').modal('hide');
+        localStorage.setItem('hasMajority', true);
+    }
+};
+
 $(window).on('load',function(){
+    localStorage.getItem('hasMajority') ?
+    null :
     $('#avertissement').modal('show');
 })
 
@@ -12,16 +25,6 @@ $(function() {
 			$('#enlargeImageModal').modal('show');
 		});
 });
-
-function verify() {
-    var no = Number(document.getElementById("age").value);
-    if(no<18) {
-        document.getElementById("ageUnder").innerText = "Désolé, mais vous devez avoir 18 ans pour acceder a ce site web.";
-    }
-    else {
-        $('#avertissement').modal('hide');
-    }
-};
 
 function stopRKey(evt) { 
   var evt = (evt) ? evt : ((event) ? event : null); 
