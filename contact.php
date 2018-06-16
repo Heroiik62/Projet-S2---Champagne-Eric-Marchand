@@ -1,3 +1,43 @@
+<?php
+
+require_once 'vendor/autoload.php';
+
+$isEmailSent = "";
+
+if (isset($_POST) && !is_null($_POST)) {
+    $isEmailSent =<<<HTML
+<div class="col-sm-12 alert alert-danger alert-dismissible show">
+    <span>Erreur, votre email n'a pas pu être envoyé, veuillez réessayer plus tard</span>
+</div>
+HTML;
+    if (isset($_POST['lastname']) && isset($_POST['firstname']) && isset($_POST['phone']) &&
+        isset($_POST['email']) && isset($_POST['adress']) && isset($_POST['city']) && isset($_POST['postcode']) &&
+        !is_null($_POST['lastname']) && !is_null($_POST['firstname']) && !is_null($_POST['phone']) &&
+        !is_null($_POST['email']) && !is_null($_POST['adress']) && !is_null($_POST['city']) && !is_null($_POST['postcode'])) {
+
+        $transport = (new Swift_SmtpTransport('smtp.gmail.com'))
+            ->setUsername('YOUR_CONTACT_MAIL_HERE')
+            ->setPassword('YOUR_CONTACT_MAIL_PASSWORD_HERE');
+        $mailer = new Swift_Mailer($transport);
+
+        $message = (new Swift_Message($_POST['subject']))
+            ->setFrom($_POST['email'])
+            ->setTo('YOUR_CONTACT_MAIL_HERE')
+            ->setBody($_POST['message'])
+        ;
+
+        $mailer->send($message);
+
+        $isEmailSent =<<<HTML
+<div class="col-sm-12 alert alert-success alert-dismissible show">
+    <span>L'email a bien été envoyé, nous vous répondrons dans les plus brefs délais</span>
+</div>
+HTML;
+
+    }
+}
+
+$html =<<<HTML
 <!DOCTYPE html>
 <html lang="fr">
     <head>
@@ -10,41 +50,6 @@
     </head>
 
     <body class="text-center">
-
-        <!--
-<div class="modal modal-dark fade" id="avertissement" tabindex="-1" role="dialog" aria-labelledby="ageAvertissment" aria-hidden="true" data-backdrop="static" data-keyboard="true">
-<div class="modal-dialog modal-lg" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Logo eric marchand</h5>
-</div>
-<div class="modal-body">
-<form>
-
-$year = date("Y");
-$yearMinusHundred = $year-1;
-$html .='<select>';
-$html .= '<option value="2018" selected>2018</option>';
-for($yearMinusHundred ; $yearMinusHundred >= $year - 100; $yearMinusHundred--) {
-$html .= '<option value="' . $yearMinusHundred . '">' . $yearMinusHundred . '</option>';
-}
-$html .= '</select>';
-
-$html .='</div>
-<div class="modal-footer">';
-
-if ($yearMinusHundred - $year >= 18) {
-$html .='<button type="button" class="btn btn-primary">Entrer</button>';
-} else {
-$html .='<button type="button" class="btn btn-primary" data-dismiss="modal">Entrer</button>';
-}
-
-$html .= '</div>
-</form>
-</div>
-</div>
-</div>
--->
 
         <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
             <header class="masthead mb-auto">
@@ -95,32 +100,34 @@ $html .= '</div>
                         <h1 class="display-4">Nous contacter / commander</h1>
                         <p class="lead">e.......</p>
                         <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-4">
-                                    <input type="text" class="form-control" placeholder="Nom" required>
+                            <div class="form-row container">
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control" name="lastname" placeholder="Nom" required>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control" name="firstname" placeholder="Prénom" required>
                                 </div>
                                 <div class="form-group col-md-4">
-                                    <input type="text" class="form-control" placeholder="Prénom" required>
+                                    <input class="form-control" type="email" name="email" placeholder="Adresse email" required>
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <input class="form-control" type="email" placeholder="Adresse email" required>
+                                <div class="form-group col-md-8">
+                                    <input type="text" class="form-control" name="phone" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$" placeholder="Téléphone" required>
                                 </div>
-                                <div class="form-group col-md-3">
-                                    <input type="text" class="form-control" pattern="^(?:0|\(?\+33\)?\s?|0033\s?)[1-79](?:[\.\-\s]?\d\d){4}$" placeholder="Téléphone" required>
+                                <div class="form-group col-md-2 col-sm-4">
+                                    <input type="text" class="form-control" name="number" pattern="[0-9]{1,4}"  placeholder="N°">
                                 </div>
-                                <div class="form-group col-md-4">
-                                    <input type="text" class="form-control" placeholder="Adresse" required>
+                                <div class="form-group col-md-10 col-sm-8">
+                                    <input type="text" class="form-control" name="adress" placeholder="Adresse" required>
                                 </div>
-                                <div class="form-group col-md-1">
-                                    <input type="text" class="form-control" pattern="[0-9]{1,4}"  placeholder="N° Bat">
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control" name="city" placeholder="Ville" required>
                                 </div>
-                                <div class="form-group col-md-2">
-                                    <input type="text" class="form-control" placeholder="Ville" required>
+                                <div class="form-group col-md-6">
+                                    <input type="text" class="form-control" name="postcode" pattern="[0-9]{5}" placeholder="Code postal" required>
                                 </div>
-                                <div class="form-group col-md-2">
-                                    <input type="text" class="form-control" pattern="[0-9]{5}" placeholder="Code postal" required>
-                                </div>
-                                <button class="btn btn-primary" type="submit">Submit form</button>
+                            </div>
+                            <div class="container col-sm-12 text-center">
+                                <button class="btn btn-primary" type="submit">Contacter l'entreprise <i class="fas fa-paper-plane"></i></button>
                             </div>
                         </form>
                     </div>
@@ -142,3 +149,7 @@ $html .= '</div>
         <script src="js/js.js"></script>
     </body>
 </html>
+HTML;
+
+
+echo $html;
