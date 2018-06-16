@@ -15,15 +15,15 @@ HTML;
         !is_null($_POST['lastname']) && !is_null($_POST['firstname']) && !is_null($_POST['phone']) &&
         !is_null($_POST['email']) && !is_null($_POST['adress']) && !is_null($_POST['city']) && !is_null($_POST['postcode'])) {
 
-        $transport = (new Swift_SmtpTransport('smtp.gmail.com'))
-            ->setUsername('YOUR_CONTACT_MAIL_HERE')
-            ->setPassword('YOUR_CONTACT_MAIL_PASSWORD_HERE');
+        $transport = (new Swift_SmtpTransport('smtp.gmail.com', 587,'tls'))
+            ->setUsername('compte.asfeld@gmail.com')
+            ->setPassword('6edb53506f062ec8b774f30fcd6dea3fd376a713');
         $mailer = new Swift_Mailer($transport);
 
-        $message = (new Swift_Message($_POST['subject']))
+        $message = (new Swift_Message('aaa'))
             ->setFrom($_POST['email'])
-            ->setTo('YOUR_CONTACT_MAIL_HERE')
-            ->setBody($_POST['message'])
+            ->setTo('sylvaincombraque@hotmail.fr')
+            ->setBody('aaa')
         ;
 
         $mailer->send($message);
@@ -99,7 +99,8 @@ $html =<<<HTML
                     <div class="container">
                         <h1 class="display-4">Nous contacter / commander</h1>
                         <p class="lead">e.......</p>
-                        <form>
+                        {$isEmailSent}
+                        <form method="post" action="/contact.php">
                             <div class="form-row container">
                                 <div class="form-group col-md-6">
                                     <input type="text" class="form-control" name="lastname" placeholder="Nom" required>
