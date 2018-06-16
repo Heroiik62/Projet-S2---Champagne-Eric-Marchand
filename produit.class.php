@@ -62,16 +62,20 @@ HTML;
             $href = strtolower($p->getNom());
             $href = preg_replace("/ /", "-", $href);
             $rep .= <<<HTML
-            <h1 class="display-4" id='{$href}'>{$p->getNom()}</h1>
+            <h1 class="display-4 nomProd" id='{$href}'>{$p->getNom()}</h1>
 HTML;
-            /*$img = Gamme::getImageFromID($p->getId(), Gamme::getContenances($p->getId()));*/
-            
-            /*$rep .= "<img src='img/{$img->getImage()}'><br>";*/
-            
-            /*$rep .= Volume::createFromID(Gamme::getContenances($p->getId()))->getNom();*/
-            $test = Gamme::getContenances($p->getId())."<hr>";       
-            
+            $test = Gamme::getContenances($p->getId());
+            $size = sizeof($test);
+            for($i = 0; $i < $size; $i++) {
+            	$rep .= "<div class='imgProduits'>";
+            	$img = Gamme::getAllFromID($p->getId(), Volume::createFromID($test[$i])->getId())->getImage();
+            	$vol = Volume::createFromID($test[$i])->getNom();
+            	$rep.= "<a><img src='img/{$img}'></a><br>";
+            	$rep .= "<a>{$vol}</a><br>";
+            	$rep .= "</div>";
+            }            
 		}
+
         $rep .= "</div>";
 		return $rep;
 	}
