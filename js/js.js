@@ -1,4 +1,6 @@
 $(window).on('load',function(){
+    localStorage.getItem('hasMajority') ?
+    null :
     $('#avertissement').modal('show');
 })
 
@@ -20,6 +22,7 @@ function verify() {
     }
     else {
         $('#avertissement').modal('hide');
+        localStorage.setItem('hasMajority', true);
     }
 };
 

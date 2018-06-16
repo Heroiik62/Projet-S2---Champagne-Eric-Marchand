@@ -20,7 +20,7 @@
                     <div class="modal-body offset-md-4 col-md-4 offset-sm-4 col-sm-4">
                         <form>
                            <p>Entrez votre age :</p>
-                            <input type="text" id="age" class="form-control offset-md-5 col-md-2" pattern="[0-9]{2}" style="text-align:center;" required>
+                            <input type="text" id="age" maxlength="2" class="form-control offset-md-5 col-md-2" pattern="[0-9]{2}" style="text-align:center;" required>
                             <small id="ageUnder" class="form-text text-muted"></small>
                             <button id="enterAge" type="button" onclick="verify()" class="btn btn-primary">Entrer</button>
                         </form>
