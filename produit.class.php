@@ -7,18 +7,27 @@ class Produit {
 	private $idProduit = null;
 	private $nomProduit = null;
 	private $descProduit = null;
+	private $prix = 0;
 
-	public function getId() {
+	public function getId(): ?int
+    {
 		return $this->idProduit;
 	}
 
-	public function getNom() {
+	public function getNom(): ?string
+    {
 		return $this->nomProduit;
 	}
 
-	public function getDescription() {
-		return $this->descProduit;
-	}
+    public function getDescription(): ?string
+    {
+        return $this->descProduit;
+    }
+
+    public function getPrix(): int
+    {
+        return $this->prix;
+    }
 
 	public static function createFromID($idProduit) {
         $request =<<<SQL
@@ -46,12 +55,6 @@ SQL;
             return $produit->fetchAll();
         else
             throw new Exception('Erreur, aucun produit trouvé');
-//		while($i = $images->fetch()) {
-//            $href = strtolower($i->getNom());
-//            $href = preg_replace("/ /", "-", $href);
-//			$img .= "<li id='produits'><a href ='#{$href}'>{$i->getNom()}</a></li>";
-//		}
-//        $img .= "</ul></nav></div>";
 	}
     
     public static function getProduitsAvecGamme() {

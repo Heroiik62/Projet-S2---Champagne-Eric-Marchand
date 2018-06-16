@@ -104,11 +104,25 @@ $html = <<<HTML
                 </div>
                 <div class="jumbotron jumbotron-fluid ">
                     <div class="container">
-                        <h1 class="display-4">Nos produits :</h1><br>
+                        <h1 class="display-4">Nos produits :</h1>
+                        <div class="row">
 HTML;
-$html .= Produit::getProduits();
-$html .= "</div>";
-$html .= Produit::getProduitsAvecGamme();                
+$products = (Produit::getProduits());
+
+foreach ($products as $product) {
+    $html .=<<<HTML
+<div class="col-sm-12 col-md-4 col-lg-3 container">
+    <div class="imagesProducts">
+        <img src="imageProduct.php?bouteille={$product->getNom()}" class="img-thumbnail" alt="Produit n°{$product->getId()}"/>
+        <h3>{$product->getNom()}</h3>
+        <span class="text-muted">{$product->getDescription()}</span>
+        <p class="text-white">Prix : {$product->getPrix()}€</p>
+    </div>
+</div>
+HTML;
+
+}
+
 $html.= <<<HTML
 </div>
             </main>
