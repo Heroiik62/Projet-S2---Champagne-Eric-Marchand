@@ -29,4 +29,4 @@ function stopRKey(evt) {
   if ((evt.keyCode == 13) && (node.type=="text"))  {return false;} 
 } 
 
-document.onkeypress = stopRKey; 
+document.onkeypress = stopRKey;
