@@ -20,10 +20,10 @@ HTML;
             ->setPassword('6edb53506f062ec8b774f30fcd6dea3fd376a713');
         $mailer = new Swift_Mailer($transport);
 
-        $message = (new Swift_Message('aaa'))
+        $message = (new Swift_Message($_POST['subject']))
             ->setFrom($_POST['email'])
             ->setTo('sylvaincombraque@hotmail.fr')
-            ->setBody('aaa')
+            ->setBody($_POST['message'])
         ;
 
         $mailer->send($message);
@@ -125,6 +125,12 @@ $html =<<<HTML
                                 </div>
                                 <div class="form-group col-md-6">
                                     <input type="text" class="form-control" name="postcode" pattern="[0-9]{5}" placeholder="Code postal" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="subject" placeholder="Sujet" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="message" placeholder="Pourquoi souhaitez-vous nous contacter ?" required>
                                 </div>
                             </div>
                             <div class="container col-sm-12 text-center">
