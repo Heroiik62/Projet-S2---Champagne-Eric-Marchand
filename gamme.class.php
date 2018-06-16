@@ -28,8 +28,8 @@ class Gamme {
 		return $this->imgProduit;
 	}
     
-    public static function getImageFromID($idProduit, $idVolume) {
-        $image = myPDO::getInstance()->prepare('SELECT imgProduit FROM gamme WHERE idProduit = :idProduit AND idVolume = :idVolume');
+    public static function getAllFromID($idProduit, $idVolume) {
+        $image = myPDO::getInstance()->prepare('SELECT * FROM gamme WHERE idProduit = :idProduit AND idVolume = :idVolume');
         $image->execute(array(':idProduit' => $idProduit, ':idVolume' => $idVolume));
         $image->setFetchMode(PDO::FETCH_CLASS, "Gamme");
         if(($i = $image->fetch()) !== FALSE) {
@@ -56,9 +56,9 @@ class Gamme {
 		$contenance = myPDO::getInstance()->prepare('SELECT * FROM gamme WHERE idProduit = :idProduit');
 		$contenance->execute(array(':idProduit' => $idProduit));
 		$contenance->setFetchMode(PDO::FETCH_CLASS, "Gamme");
-		$rep = null;
-		while($c = $contenance->fetch()) {	
-			$rep .= Volume::createFromID($c->getIdVolume())->getId();
+		$rep = array();
+		while($c = $contenance->fetch()) {
+			$rep[] .= Volume::createFromID($c->getIdVolume())->getId();
 		}
 		return $rep;
 	}
