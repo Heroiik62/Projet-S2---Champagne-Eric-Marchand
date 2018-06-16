@@ -15,7 +15,7 @@ $(function() {
 
 function verify() {
     var no = Number(document.getElementById("age").value);
-    if(no<18) {
+    if (no < 18 || Number.isNaN(no)) {
         document.getElementById("ageUnder").innerText = "Désolé, mais vous devez avoir 18 ans pour acceder a ce site web.";
     }
     else {
