@@ -27,10 +27,17 @@ $html = <<<HTML
         #produits:last-child {
             border-right: 0;
         }
-        .img-thumbnail {
-            margin: 2% 2% 2% 2%;
-            width: 250px;
-            height: 250px;
+        .imgProduits {
+              display: inline-block;
+              vertical-align: top;
+              margin: 10px 10px 10px 20px;
+        }
+        .imgProduits img {
+              height: 200px;
+        }
+        .nomProd {
+            margin: 20px 0 20px 0;
+            text-decoration: underline;
         }
     </style>
         <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
