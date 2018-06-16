@@ -67,7 +67,7 @@ $html = <<<HTML
                                     <a class="nav-link" href="galerie.php">Galerie</a>
                                 </li>
                                 <li class="nav-item text-center col-md-2">
-                                    <a class="nav-link" href="#"><i class="fas fa-user"></i></a>
+                                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span class="badge badge-light" id="shopping-cart"></span></a>
                                 </li>
                             </ul>
                         </div>
@@ -104,11 +104,40 @@ $html = <<<HTML
                 </div>
                 <div class="jumbotron jumbotron-fluid ">
                     <div class="container">
-                        <h1 class="display-4">Nos produits :</h1><br>
+                        <h1 class="display-4">Nos produits :</h1>
+                        <div class="row">
 HTML;
-$html .= Produit::getProduits();
-$html .= "</div>";
-$html .= Produit::getProduitsAvecGamme();                
+$products = (Produit::getProduits());
+
+foreach ($products as $product) {
+    $buttons = "";
+
+    foreach ($product->getVolumes() as $volume) {
+        $volume >= 100 ?
+            $volume = ($volume/100).'L' : $volume .= 'cl';
+        $buttons .=<<<HTML
+<button class="btn btn-info" onclick="addtoCart($(this))" id="{$product->getId()}-{$volume}">{$volume}</button>
+HTML;
+
+    }
+
+    $html .=<<<HTML
+<div class="col-sm-12 col-md-4 col-lg-3 container">
+    <div class="imagesProducts">
+        <img src="imageProduct.php?bouteille={$product->getNom()}" class="img-thumbnail" alt="Produit n°{$product->getId()}"/>
+        <h3>{$product->getNom()}</h3>
+        <span class="text-muted">{$product->getDescription()}</span>
+        <p class="text-white">Prix : {$product->getPrix()}€</p>
+        <div class="container">
+            <p>Ajouter au panier</p>
+            {$buttons}
+        </div>
+    </div>
+</div>
+HTML;
+
+}
+
 $html.= <<<HTML
 </div>
             </main>
@@ -126,6 +155,52 @@ $html.= <<<HTML
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
         <script src="js/js.js"></script>
+        <script type="text/javascript">
+            let countArticles = 0;
+        
+            if (localStorage.getItem('shopping-cart') === null || localStorage.getItem('shopping-cart') === undefined) {
+                localStorage.setItem('shopping-cart', JSON.stringify([]));
+            }
+            else {
+                JSON.parse(localStorage.getItem('shopping-cart')).map((article) => {
+                    article.volumes.map((volume) => {
+                        countArticles += volume.quantity;
+                    })
+                })
+            }
+            $('#shopping-cart').text(countArticles);
+            console.log(JSON.parse(localStorage.getItem('shopping-cart')))
+            
+            function addtoCart(obj) {
+                let currentObject = obj.attr('id').split('-');
+                let currentCart = JSON.parse(localStorage.getItem('shopping-cart'));
+                let hasCartObject = false;
+                let hasVolume = false;
+                currentCart.map((currentCartObject) => {
+                    if (parseInt(currentCartObject.id) == currentObject[0]) {
+                        hasCartObject = true;
+                        currentCartObject.volumes.map((volume) => {
+                            if (volume.name == currentObject[1]) {
+                                    volume.quantity += 1;
+                                    hasVolume = true;
+                            }
+                        });
+                        
+                        if (!hasVolume) {
+                            currentCartObject.volumes.push({name: currentObject[1], quantity: 1});
+                        }
+                    }
+                });
+                
+                if (!hasCartObject) {
+                    currentCart.push({id: currentObject[0], volumes: [{name: currentObject[1], quantity: 1}]})
+                }
+                
+                countArticles++;
+                $("#shopping-cart").text(countArticles);
+                localStorage.setItem('shopping-cart', JSON.stringify(currentCart));
+            }
+        </script>
     </body>
 </html>
 HTML;
