@@ -15,7 +15,7 @@ return <<<HTML
                                     <a class="nav-link" href="index.php"><i class="fas fa-home"></i></a>
                                 </li>
                                 <li class="nav-item text-center col-md-2">
-                                    <a class="nav-link" href="#">Produits</a>
+                                    <a class="nav-link" href="produit.php">Produits</a>
                                 </li>
                                 <li class="nav-item text-center col-md-2">
                                     <a class="nav-link" href="#">Histoire</a>
@@ -27,7 +27,7 @@ return <<<HTML
                                     <a class="nav-link" href="galerie.php">Galerie</a>
                                 </li>
                                 <li class="nav-item text-center col-md-2">
-                                    <a class="nav-link" href="#"><i class="fas fa-shopping-cart"></i> <span class="badge badge-light" id="shopping-cart"></span></a>
+                                    <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> <span class="badge badge-light" id="shopping-cart"></span></a>
                                 </li>
                             </ul>
                         </div>
