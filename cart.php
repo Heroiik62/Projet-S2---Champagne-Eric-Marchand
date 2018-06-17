@@ -32,6 +32,7 @@ $html = <<<HTML
         
         <script type="text/javascript">
             let countArticles = 0;
+            let price = 0;
             let articles = "";
         
             if (localStorage.getItem('shopping-cart') === null || localStorage.getItem('shopping-cart') === undefined) {
@@ -42,6 +43,7 @@ $html = <<<HTML
                     articles += "<div class='col-sm-12' id='"+article.id+"'><h2>"+article.name+"</h2><div class='dropdown-divider'></div><ul>"
                     article.volumes.map((volume) => {
                         countArticles += volume.quantity;
+                        price += volume.quantity.price;
                         articles += "<li>"+volume.quantity+" bouteille(s) de "+volume.name+"</li>"
                     });
                     articles += "</ul></div>";
