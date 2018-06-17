@@ -115,3 +115,13 @@ footer {
     border: 1px solid #c4c4c4;
     border-radius: 5px;
 }
+
+#cart-review > div {
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+#cart-review > div > h3 > i{
+    padding: 0% !important;
+    color: #004085;
+}

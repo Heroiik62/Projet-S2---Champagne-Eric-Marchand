@@ -37,7 +37,7 @@ class Produit {
 
 	public static function createFromID($idProduit) {
         $request =<<<SQL
-SELECT * FROM produit ORDER BY idProduit WHERE idProduit = ?
+SELECT * FROM produit WHERE idProduit = ? ORDER BY idProduit
 SQL;
         $produit = myPDO::getInstance()->prepare($request);
         $produit->setFetchMode(PDO::FETCH_CLASS, __CLASS__);
