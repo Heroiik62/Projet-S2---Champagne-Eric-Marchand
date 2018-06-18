@@ -64,7 +64,6 @@ $html = <<<HTML
             function removeOneItem(item) {
                 var myjsoncart = JSON.parse(localStorage.getItem('shopping-cart'));
                 let quantityItem = item.parent().parent().find('#bottleQuantity');
-                console.log("My first : ", myjsoncart);
                 if (quantityItem.text() <= 1) {
                     if (item.parent().parent().parent().children().length > 3){
                         item.parent().parent().fadeOut(400, () => {
@@ -87,7 +86,6 @@ $html = <<<HTML
                     
                     
                 } else {
-                    let priceItem = item.parent().parent().find('#bottlePrice').text();
                     quantityItem.text(quantityItem.text() - 1);
                     myjsoncart.forEach((myobject) => {
                         if (item.parent().parent().parent().attr('id') === myobject.id) {
@@ -104,7 +102,21 @@ $html = <<<HTML
             }
             
             function addOneItem(item) {
+              let myjsoncart = JSON.parse(localStorage.getItem('shopping-cart'));
+              let quantityItem = item.parent().parent().find('#bottleQuantity');
               
+              myjsoncart.forEach((myitem) => {
+                  if (myitem.id === item.parent().parent().parent().attr('id')) {
+                      myitem.volumes.forEach((volume) => {
+                          if (volume.name === item.parent().parent().parent().find("#bottleVolume").text()) {
+                              volume.quantity = parseInt(volume.quantity) + 1;
+                              item.parent().parent().parent().find("#bottleQuantity").text(volume.quantity)
+                          }
+                      })
+                  }
+              })
+              localStorage.setItem('shopping-cart', JSON.stringify(myjsoncart));
+              countBottles();
             }
             
             function removeItems(item) {
