@@ -58,7 +58,7 @@ class Gamme {
 		$contenance->setFetchMode(PDO::FETCH_CLASS, "Gamme");
 		$rep = array();
 		while($c = $contenance->fetch()) {
-			$rep[] .= Volume::createFromID($c->getIdVolume())->getId();
+			$rep[] .= Volume::createFromID($c->getIdVolume())->getVolume();
 		}
 		return $rep;
 	}
