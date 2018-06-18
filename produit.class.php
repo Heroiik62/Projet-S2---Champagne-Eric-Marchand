@@ -7,7 +7,7 @@ class Produit {
 	private $idProduit = null;
 	private $nomProduit = null;
 	private $descProduit = null;
-    private $prix = 0;
+    private $prix = [10, 15, 30];
     private $volumes = [75, 37.5, 300];
 
 	public function getId(): ?int
@@ -25,7 +25,7 @@ class Produit {
         return $this->descProduit;
     }
 
-    public function getPrix(): int
+    public function getPrix(): array
     {
         return $this->prix;
     }

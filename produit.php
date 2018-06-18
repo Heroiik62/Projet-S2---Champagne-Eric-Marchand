@@ -49,14 +49,18 @@ $products = (Produit::getProduits());
 
 foreach ($products as $product) {
     $buttons = "";
+    $priceIndex = 0;
+    $prices = $product->getPrix();
+    $pricesList = "";
 
     foreach ($product->getVolumes() as $volume) {
         $volume >= 100 ?
             $volume = ($volume/100).'L' : $volume .= 'cl';
+        $priceIndex === 0 ? $pricesList .= $prices[$priceIndex] : $pricesList .= '/'.$prices[$priceIndex];
         $buttons .=<<<HTML
-<button class="btn btn-info" onclick="addtoCart($(this))" id="{$product->getId()}-{$volume}-{$product->getNom()}">{$volume}</button>
+<button class="btn btn-info" onclick="addtoCart($(this))" value="{$prices[$priceIndex]}" id="{$product->getId()}-{$volume}-{$product->getNom()}">{$volume}</button>
 HTML;
-
+        $priceIndex++;
     }
 
     $html .=<<<HTML
@@ -65,7 +69,7 @@ HTML;
         <img src="imageProduct.php?bouteille={$product->getNom()}" class="img-thumbnail" alt="Produit n°{$product->getId()}"/>
         <h3>{$product->getNom()}</h3>
         <span class="text-muted">{$product->getDescription()}</span>
-        <p class="text-white">Prix : {$product->getPrix()}€</p>
+        <p class="text-white">Prix : {$pricesList}€</p>
         <div class="container">
             <p>Ajouter au panier</p>
             {$buttons}
@@ -114,13 +118,13 @@ $html.= <<<HTML
                         });
                         
                         if (!hasVolume) {
-                            currentCartObject.volumes.push({name: currentObject[1], quantity: 1});
+                            currentCartObject.volumes.push({name: currentObject[1], quantity: 1, price: obj.attr('value')});
                         }
                     }
                 });
                 
                 if (!hasCartObject) {
-                    currentCart.push({id: currentObject[0], name: currentObject[2], volumes: [{name: currentObject[1], quantity: 1}]})
+                    currentCart.push({id: currentObject[0], name: currentObject[2], volumes: [{name: currentObject[1], quantity: 1, price: obj.attr('value')}]})
                 }
                 
                 countArticles++;

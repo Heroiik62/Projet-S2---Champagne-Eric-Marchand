@@ -32,6 +32,7 @@ $html = <<<HTML
         
         <script type="text/javascript">
             let countArticles = 0;
+            let price = 0;
             let articles = "";
         
             if (localStorage.getItem('shopping-cart') === null || localStorage.getItem('shopping-cart') === undefined) {
@@ -42,12 +43,13 @@ $html = <<<HTML
                     articles += "<div class='col-sm-12' id='"+article.id+"'><h2>"+article.name+"</h2><div class='dropdown-divider'></div><ul>"
                     article.volumes.map((volume) => {
                         countArticles += volume.quantity;
-                        articles += "<li>"+volume.quantity+" bouteille(s) de "+volume.name+"</li>"
+                        price += volume.price*volume.quantity;
+                        articles += "<li>"+volume.quantity+" bouteille(s) de "+volume.name+" : ("+volume.price+"€ l'unité)</li>"
                     });
                     articles += "</ul></div>";
                 })
                 
-                articles += "<div class='col-sm-12'><h2>Résumé</h2><div class='dropdown-divider'></div><h3>Vous avez "+countArticles+" bouteille(s) dans votre panier pour un total de XXX euros</h3></div>"
+                articles += "<div class='col-sm-12'><h2>Résumé</h2><div class='dropdown-divider'></div><h3>Vous avez "+countArticles+" bouteille(s) dans votre panier pour un total de "+price+" euros</h3></div>"
             }
             $('#shopping-cart').text(countArticles);
             $('#cart-review').html(articles);
