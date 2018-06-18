@@ -3,7 +3,7 @@
 return <<<HTML
             <header class="masthead mb-auto">
                 <div class="inner">
-                    <h3 class="masthead-brand">LOGO ERIC MARCHAND</h3>
+                    <img class='masthead-brand' src='img/logo.png' alt='logo Champagne Eric Marchand' width='500px'>
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>

@@ -47,7 +47,7 @@
                                     <a class='nav-link' href='index.php'><i class='fas fa-home'></i></a>
                                 </li>
                                 <li class='nav-item text-center col-md-2'>
-                                    <a class='nav-link' href='#'>Produits</a>
+                                    <a class='nav-link' href='produit.php'>Produits</a>
                                 </li>
                                 <li class='nav-item text-center col-md-2'>
                                     <a class='nav-link' href='#'>Histoire</a>

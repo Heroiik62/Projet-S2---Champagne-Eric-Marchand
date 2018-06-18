@@ -10,46 +10,10 @@
     </head>
 
     <body class="text-center">
-
-        <!--
-<div class="modal modal-dark fade" id="avertissement" tabindex="-1" role="dialog" aria-labelledby="ageAvertissment" aria-hidden="true" data-backdrop="static" data-keyboard="true">
-<div class="modal-dialog modal-lg" role="document">
-<div class="modal-content">
-<div class="modal-header">
-<h5 class="modal-title">Logo eric marchand</h5>
-</div>
-<div class="modal-body">
-<form>
-
-$year = date("Y");
-$yearMinusHundred = $year-1;
-$html .='<select>';
-$html .= '<option value="2018" selected>2018</option>';
-for($yearMinusHundred ; $yearMinusHundred >= $year - 100; $yearMinusHundred--) {
-$html .= '<option value="' . $yearMinusHundred . '">' . $yearMinusHundred . '</option>';
-}
-$html .= '</select>';
-
-$html .='</div>
-<div class="modal-footer">';
-
-if ($yearMinusHundred - $year >= 18) {
-$html .='<button type="button" class="btn btn-primary">Entrer</button>';
-} else {
-$html .='<button type="button" class="btn btn-primary" data-dismiss="modal">Entrer</button>';
-}
-
-$html .= '</div>
-</form>
-</div>
-</div>
-</div>
--->
-
         <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
             <header class="masthead mb-auto">
                 <div class="inner">
-                    <h3 class="masthead-brand">LOGO ERIC MARCHAND</h3>
+                    <img class='masthead-brand' src='img/logo.png' alt='logo Champagne Eric Marchand' width='500px'>
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -87,7 +51,7 @@ $html .= '</div>
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" style="color: white;">×</span></button>
                                 </div>
                                 <div class="modal-body">
                                     <img src="" class="enlargeImageModalSource" style="width: 100%;">
