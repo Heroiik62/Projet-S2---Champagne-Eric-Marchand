@@ -7,7 +7,7 @@ class Produit {
 	private $idProduit = null;
 	private $nomProduit = null;
 	private $descProduit = null;
-    private $prix = [10, 15, 30];
+    private $prix = [];
     private $volumes = [];
 
 	public function getId(): ?int
@@ -25,8 +25,12 @@ class Produit {
         return $this->descProduit;
     }
 
-    public function getPrix(): array
+    public function getPrix()
     {
+        $b = Produit::getVolumes();
+        for($i = 0; $i < count($b); $i++) {
+            $this->prix[] = Gamme::getAllFromID($this->idProduit, $b[$i])->getPrix();
+        }
         return $this->prix;
     }
 

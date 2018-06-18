@@ -53,7 +53,8 @@ foreach ($products as $product) {
     $prices = $product->getPrix();
     $pricesList = "";
 
-    foreach ($product->getVolumes() as $volume) {
+    foreach ($product->getVolumes() as $vol) {
+        $volume = Volume::createFromID($vol)->getVolume();
         $volume >= 100 ?
             $volume = ($volume/100).'L' : $volume .= 'cL';
         $priceIndex === 0 ? $pricesList .= $prices[$priceIndex] : $pricesList .= '/'.$prices[$priceIndex];
