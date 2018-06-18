@@ -55,7 +55,7 @@ foreach ($products as $product) {
 
     foreach ($product->getVolumes() as $volume) {
         $volume >= 100 ?
-            $volume = ($volume/100).'L' : $volume .= 'cl';
+            $volume = ($volume/100).'L' : $volume .= 'cL';
         $priceIndex === 0 ? $pricesList .= $prices[$priceIndex] : $pricesList .= '/'.$prices[$priceIndex];
         $buttons .=<<<HTML
 <button class="btn btn-info" onclick="addtoCart($(this))" value="{$prices[$priceIndex]}" id="{$product->getId()}-{$volume}-{$product->getNom()}">{$volume}</button>
