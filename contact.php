@@ -21,15 +21,15 @@ HTML;
         !is_null($_POST['email']) && !is_null($_POST['adress']) && !is_null($_POST['city']) && !is_null($_POST['postcode'])) {
 
         $transport = (new Swift_SmtpTransport('smtp.gmail.com', 587,'tls'))
-            ->setUsername('compte.asfeld@gmail.com')
-            ->setPassword('6edb53506f062ec8b774f30fcd6dea3fd376a713');
+            ->setUsername('heroiik62@gmail.com')
+            ->setPassword('wwohwvgmczmfvhao');
         $mailer = new Swift_Mailer($transport);
 
         $message = (new Swift_Message($_POST['subject']))
             ->setFrom($_POST['email'])
-            ->setTo('sylvaincombraque@hotmail.fr')
+            ->setTo('heroiik62@gmail.com')
             ->setBody($_POST['message'])
-        ;
+            ;
 
         $mailer->send($message);
 
@@ -59,7 +59,7 @@ $html =<<<HTML
                         <h1 class="display-4">Nous contacter / commander</h1>
                         <p class="lead">e.......</p>
                         {$isEmailSent}
-                        <form method="post" action="/contact.php">
+                        <form method="post" action="contact.php">
                             <div class="form-row container">
                                 <div class="form-group col-md-6">
                                     <input type="text" class="form-control" name="lastname" placeholder="Nom" required>
