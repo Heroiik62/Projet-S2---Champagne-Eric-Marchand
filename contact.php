@@ -57,7 +57,7 @@ $html =<<<HTML
                 <div class="jumbotron jumbotron-fluid ">
                     <div class="container">
                         <h1 class="display-4">Nous contacter / commander</h1>
-                        <p class="lead">e.......</p>
+                
                         {$isEmailSent}
                         <form method="post" action="/contact.php">
                             <div class="form-row container">
