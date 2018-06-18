@@ -14,8 +14,8 @@
         <div class="modal fade" id="avertissement" tabindex="-1" role="dialog" aria-labelledby="ageAvertissment" aria-hidden="true" data-backdrop="static" data-keyboard="false">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content row col-md-12">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Logo eric marchand</h5>
+                    <div class="modal-header offset-md-2">
+                        <img class="modal-title" src='img/logo.png' alt='logo Champagne Eric Marchand' width='500px'>
                     </div>
                     <div class="modal-body offset-md-4 col-md-4 offset-sm-4 col-sm-4">
                         <form>
@@ -35,7 +35,7 @@
         <div class='cover-container d-flex w-100 h-100 mx-auto flex-column'>
             <header class='masthead mb-auto'>
                 <div class='inner'>
-                    <h3 class='masthead-brand'>LOGO ERIC MARCHAND</h3>
+                    <img class='masthead-brand' src='img/logo.png' alt='logo Champagne Eric Marchand' width='500px'>
                     <nav class='navbar navbar-expand-lg navbar-dark bg-dark row'>
                         <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'>
                             <span class='navbar-toggler-icon'></span>
