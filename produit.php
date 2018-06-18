@@ -67,7 +67,7 @@ HTML;
     $html .=<<<HTML
 <div class="col-sm-12 col-md-4 col-lg-3 container">
     <div class="imagesProducts">
-        <img src="imageProduct.php?bouteille={$product->getNom()}" class="img-thumbnail" alt="Produit n°{$product->getId()}"/>
+        <img src="imageProduct.php?bouteille={$product->getNom()}" class="img-thumbnail transparent-image" alt="Produit n°{$product->getId()}"/>
         <h3>{$product->getNom()}</h3>
         <span class="text-muted">{$product->getDescription()}</span>
         <p class="text-white">Prix : {$pricesList}€</p>

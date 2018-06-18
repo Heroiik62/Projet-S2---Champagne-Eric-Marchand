@@ -124,3 +124,8 @@ footer {
     padding: 0% !important;
     color: #004085;
 }
+
+.transparent-image {
+    border: 2px solid transparent;
+    background-color: transparent;
+}

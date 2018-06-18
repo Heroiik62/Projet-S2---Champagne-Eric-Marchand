@@ -40,11 +40,17 @@ $html = <<<HTML
             }
             else {
                 JSON.parse(localStorage.getItem('shopping-cart')).map((article) => {
-                    articles += "<div class='col-sm-12' id='"+article.id+"'><h2>"+article.name+"</h2><div class='dropdown-divider'></div><ul>"
+                    articles += "<div class='col-sm-12' id='"+article.id+"'><div class='row'><h2 class='col-sm-6 offset-sm-3 offset-lg-2 col-lg-8'>"+article.name+"</h2><button class='btn btn-danger col-sm-3 col-lg-2' onclick='removeItems($(this))'><h3>Supprimer</h1></button></div><div class='dropdown-divider'></div><ul>"
                     article.volumes.map((volume) => {
                         countArticles += volume.quantity;
                         price += volume.price*volume.quantity;
-                        articles += "<li>"+volume.quantity+" bouteille(s) de "+volume.name+" : ("+volume.price+"€ l'unité)</li>"
+                        articles += "<li>"+volume.quantity+" bouteille(s) de "+volume.name+" : ("+volume.price+"€ l'unité) " +
+                        "<button class='btn btn-info' onclick='removeOneItem($(this))'>" +
+                          "<i class='fas fa-caret-up'></i> 1" +
+                        "</button>" +
+                        "<button class='btn btn-danger' onclick='removeOneItem($(this))'>" +
+                         "<i class='fas fa-caret-down'></i> 1" +
+                        "</button></li>"
                     });
                     articles += "</ul></div>";
                 })
@@ -53,6 +59,16 @@ $html = <<<HTML
             }
             $('#shopping-cart').text(countArticles);
             $('#cart-review').html(articles);
+        </script>
+        <script>
+            function removeOneItem(item) {
+              
+            }
+            
+            function removeItems(item) {
+              //$(item).parent().parent().hide();
+              console.log(item.parent());
+            }
         </script>
     </body>
 </html>
