@@ -49,7 +49,7 @@ $html =<<<HTML
                 <div class="jumbotron jumbotron-fluid ">
                     <div class="container">
                         <h1 class="display-4">Où nous trouver ?</h1>
-                        <p class="lead">Nous sommes à ...km de Reims...</p>
+                        <p class="lead">Nous sommes à environ 20 km de Reims...</p>
                         <iframe width="100%" height="400vh" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDF16u2-AcikeQ6v18-x_TFcxSoCXIKkpk&q=Champage+Eric+Marchand,Faverolles+et+Coemy" allowfullscreen></iframe>
                     </div>
                 </div>
