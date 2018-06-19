@@ -17,7 +17,7 @@ switch ($name) {
         $actives[4] = 'active';
         break;
     case 'cart.php':
-        $actives[4] = 'active';
+        $actives[5] = 'active';
         break;
     default:
         $actives[0] = 'active';
