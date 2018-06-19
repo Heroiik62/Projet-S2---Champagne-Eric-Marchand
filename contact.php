@@ -26,7 +26,8 @@ HTML;
         $mailer = new Swift_Mailer($transport);
 
         $message = (new Swift_Message($_POST['subject']))
-            ->setFrom($_POST['email'])
+            ->setFrom($_POST['email'], $_POST['subject'])
+            ->addReplyTo($_POST['email'], $_POST['email'])
             ->setTo('heroiik62@gmail.com')
             ->setBody($_POST['message'])
             ;
