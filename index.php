@@ -13,12 +13,12 @@ $html = <<<HTML
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content row col-md-12">
                     <div class="modal-header offset-md-2">
-                        <img class="modal-title" src='img/logo.png' alt='logo Champagne Eric Marchand' width='500px'>
+                        <img class="modal-title" src='img/logo.png' alt='logo Champagne Eric Marchand' width='80%'>
                     </div>
                     <div class="modal-body offset-md-4 col-md-4 offset-sm-4 col-sm-4">
                         <form>
                            <p>Entrez votre age :</p>
-                            <input type="text" id="age" maxlength="2" class="form-control offset-md-5 col-md-2" pattern="[0-9]{2}" style="text-align:center;" required>
+                            <input type="text" id="age" maxlength="2" class="form-control offset-md-5 col-md-2 offset-sm-5 col-sm-2" pattern="[0-9]{2}" style="text-align:center;" required>
                             <small id="ageUnder" class="form-text text-muted"></small>
                             <button id="enterAge" type="button" onclick="verify()" class="btn btn-primary">Entrer</button>
                         </form>
@@ -72,7 +72,7 @@ $html = <<<HTML
                                 <div class='carousel-item active'>
                                     <img height='250px' class='' src='img/brut.png' alt='First slide'>
                                     <div class='carousel-caption d-md-block'>
-                                        <a href="produit.php"><button type='button' class='btn btn-dark'><u>Produits</u></button></a>
+                                        <a href="produit.php"><button type='button' class='btn'><u>Produits</u></button></a>
                                     </div>
                                 </div>
 HTML;
@@ -83,7 +83,7 @@ $html .= <<<HTML
                                 <div class='carousel-item'>
                                     <img src="imageProduct.php?bouteille={$product->getNom()}" class="img-thumbnail transparent-image" alt="Produit n°{$product->getId()}"/>
                                     <div class='carousel-caption d-md-block'>
-                                        <a href="produit.php"><button type='button' class='btn btn-dark'>{$product->getNom()}</button></a>
+                                        <a href="produit.php"><button type='button' class='btn'>{$product->getNom()}</button></a>
                                     </div>
                                 </div>
 HTML;

@@ -28,6 +28,7 @@ body > .container {
     background-color: #CFB53B;
     border-color: #ffff;
     margin: 1%;
+    color:white;
 }
 
 .btn:hover {
@@ -89,6 +90,10 @@ footer {
     background-color: #212529;
 }
 
+.navbar-dark .navbar-nav .nav-link{
+    color: #ffff;
+}
+
 .nav-item:hover { 
     border-top: 3px solid #CFB53B;
     transition: border-top 100ms;
@@ -122,12 +127,33 @@ footer {
     padding: 2% 0 2% 0;
 }
 
+.modal-header {
+    text-align: center;
+    display:inherit;
+}
+
 .modal-footer, .modal-header {
     border: 0px solid black;
 }
 
 .carousel-item.active {
     border: 0px solid black !important;
+}
+
+@media (max-width: 767.98px) {
+    .modal-header {
+        display: unset;
+    }
+    
+    input {
+        max-width: 26px;
+    }
+}
+
+@media (max-width: 575px) {
+    .form-control{
+        display: unset;
+    }
 }
 
 .imagesProducts {
@@ -147,10 +173,11 @@ footer {
 
 .imagesProducts {
     border: 0px solid transparent;
-    margin: 4% 0 4% 0
+    margin: 4% 0 4% 0;
 }
 
 .img-thumbnail {
     background-color: transparent;
     border: 0px solid transparent;
+    max-width: 60%;
 }

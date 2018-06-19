@@ -40,7 +40,7 @@ HTML;
     }
 
     $html .=<<<HTML
-<div class="col-sm-12 col-md-4 col-lg-3 container">
+<div class="col-sm-12 col-md-4 col-lg-4 container">
     <div class="imagesProducts">
         <img src="imageProduct.php?bouteille={$product->getNom()}" class="img-thumbnail transparent-image" alt="Produit n°{$product->getId()}"/>
         <h3>{$product->getNom()}</h3>
