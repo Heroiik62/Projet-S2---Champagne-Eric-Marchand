@@ -14,35 +14,10 @@ $html = <<<HTML
     {$navbar}
 
             <main role="main" class="inner cover">
-            <div id="sliderAccueil" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#sliderAccueil" data-slide-to="0" class="active"></li>
-                        <li data-target="#sliderAccueil" data-slide-to="1"></li>
-                        <li data-target="#sliderAccueil" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block w-100" src="img/grappe.jpg" alt="First slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="http://archeochampagne.epernay.fr/wp-content/uploads/8_caves-de-lavenue-de-champagne_michel-jolyot-1923x580.jpg" alt="Second slide">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block w-100" src="http://ca.france.fr/sites/default/files/imagecache/ATF_Image_bandeau_v2/istock_champagne_ina_peters_5.jpg" alt="Third slide">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#sliderAccueil" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Précédent</span>
-                    </a>
-                    <a class="carousel-control-next" href="#sliderAccueil" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Suivant</span>
-                    </a>
-                </div>
                 <div class="jumbotron jumbotron-fluid ">
                     <div class="container">
                         <h1 class="display-4">Nos produits :</h1>
+                         <p class="lead">Achetez vos produits en cliquant sous les bouteilles.</p>
                         <div class="row">
 HTML;
 $products = (Produit::getProduits());
@@ -57,7 +32,7 @@ foreach ($products as $product) {
         $volume = Volume::createFromID($vol)->getVolume();
         $volume >= 100 ?
             $volume = ($volume/100).'L' : $volume .= 'cL';
-        $priceIndex === 0 ? $pricesList .= $prices[$priceIndex] : $pricesList .= '/'.$prices[$priceIndex];
+        $priceIndex === 0 ? $pricesList .= $prices[$priceIndex] : $pricesList .= ' / '.$prices[$priceIndex];
         $buttons .=<<<HTML
 <button class="btn btn-info" onclick="addtoCart($(this))" value="{$prices[$priceIndex]}" id="{$product->getId()}-{$volume}-{$product->getNom()}">{$volume}</button>
 HTML;
