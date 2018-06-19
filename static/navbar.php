@@ -1,19 +1,20 @@
 <?php
 
-$name = explode('/',  $_SERVER['PHP_SELF'])[1];
+$name = explode('/',  $_SERVER['PHP_SELF']);
+$name = $name[count($name) - 1];
 $actives = ['', '', '', '', '', ''];
 
 switch ($name) {
     case 'produit.php':
         $actives[1] = 'active';
         break;
-    case 'histoire.php':
+    case 'contact.php':
         $actives[2] = 'active';
         break;
-    case 'contact.php':
+    case 'galerie.php':
         $actives[3] = 'active';
         break;
-    case 'galerie.php':
+    case 'cart.php':
         $actives[4] = 'active';
         break;
     default:
