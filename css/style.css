@@ -181,3 +181,32 @@ footer {
     border: 0px solid transparent;
     max-width: 60%;
 }
+
+#admin-nav {
+    background-color: #343a40;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+#list-tab {
+    padding-top: 2em;
+}
+
+#list-tab > a.active {
+    background-color: #343a40;
+    border: 1px solid white;
+    color: white !important;
+}
+
+#list-tab > a.active > .fas {
+    color: white !important;
+}
+
+#list-tab > a > .fas {
+    color: black !important;
+}
+
+#champagne-bottle {
+    height: 22px;
+    width: 24px;
+}
