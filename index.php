@@ -1,3 +1,9 @@
+<?php
+require 'myPDO.include.php';
+require 'volume.class.php';
+require 'produit.class.php';
+require 'gamme.class.php';
+$html = <<<HTML
 <!DOCTYPE html>
 <html lang='fr'>
     <head>
@@ -103,17 +109,25 @@
                         <div id='sliderChampagne' class='carousel slide offset-md-5 col-md-2' data-ride='carousel'>
                             <div class='carousel-inner'>
                                 <div class='carousel-item active'>
-                                    <img width='100px' class='' src='https://www.ruinart.com/sites/ruinart/files/2018-04/Ruinart-BlancDeBlancs-75-NK-T-OP-ERetailKit-123_728-1992.png' alt='First slide'>
+                                    <img height='250px' class='' src='img/brut.png' alt='First slide'>
                                     <div class='carousel-caption d-md-block'>
-                                        <button type='button' class='btn btn-dark'>Info...</button>
+                                        <a href="produit.php"><button type='button' class='btn btn-dark'><u>Produits</u></button></a>
                                     </div>
                                 </div>
+HTML;
+$products = (Produit::getProduits());
+
+foreach ($products as $product) {
+$html .= <<<HTML
                                 <div class='carousel-item'>
-                                    <img width='100px' class='' src='https://www.ruinart.com/sites/ruinart/files/2018-04/Ruinart-BlancDeBlancs-75-NK-T-OP-ERetailKit-123_728-1992.png' alt='Second slide'>
+                                    <img src="imageProduct.php?bouteille={$product->getNom()}" class="img-thumbnail transparent-image" alt="Produit n°{$product->getId()}"/>
                                     <div class='carousel-caption d-md-block'>
-                                        <button type='button' class='btn btn-dark'>Info...</button>
+                                        <a href="produit.php"><button type='button' class='btn btn-dark'>{$product->getNom()}</button></a>
                                     </div>
                                 </div>
+HTML;
+}
+$html .= <<<HTML
                             </div>
                             <a class='carousel-control-prev' href='#sliderChampagne' role='button' data-slide='prev'>
                                 <span class='carousel-control-prev-icon' aria-hidden='true'></span>
@@ -152,3 +166,5 @@
         <script src='js/js.js'></script>
     </body>
 </html>
+HTML;
+echo $html;
