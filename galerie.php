@@ -13,7 +13,7 @@
         <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
             <header class="masthead mb-auto">
                 <div class="inner">
-                    <img class='masthead-brand' src='img/logo.png' alt='logo Champagne Eric Marchand' width='500px'>
+                    <img class='masthead-brand' src='img/logo.png' alt='logo Champagne Eric Marchand' width='30%'>
                     <nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -25,7 +25,7 @@
                                     <a class="nav-link" href="index.php"><i class="fas fa-home"></i></a>
                                 </li>
                                 <li class="nav-item text-center col-md-2">
-                                    <a class="nav-link" href="#">Produits</a>
+                                    <a class="nav-link" href="produit.php">Produits</a>
                                 </li>
                                 <li class="nav-item text-center col-md-2">
                                     <a class="nav-link" href="#">Histoire</a>
@@ -62,14 +62,12 @@
                     <div class="container col-md-12">
                        <h1 class="display-4">Galerie d'images :</h1>
                         <p class="lead">Voici les photos prise lors d'évènements...</p>
-                        <img src="img/vigne1.jpg" alt="vigne" class="col-md-3 img-thumbnail">
-                        <img src="img/vigne4.jpg" alt="vigne" class="col-md-3 img-thumbnail">
-                        <img src="img/vigne3.jpg" alt="vigne" class="col-md-3 img-thumbnail">
-                        <img src="img/vigne2.jpg" alt="vigne" class="col-md-3 img-thumbnail">
-                    </div>
-                    <div class="container col-md-12">
-                        <img src="img/medaille.jpg" alt="medaille" class="col-md-3 img-thumbnail">
-                        <img src="img/grappe.jpg" alt="grappe" class="col-md-3 img-thumbnail">
+                        <img src="img/vigne1.jpg" alt="vigne" class="img-square">
+                        <img src="img/vigne4.jpg" alt="vigne" class="img-square">
+                        <img src="img/vigne3.jpg" alt="vigne" class="img-square">
+                        <img src="img/vigne2.jpg" alt="vigne" class="img-square">
+                        <img src="img/medaille.jpg" alt="medaille" class="img-square">
+                        <img src="img/grappe.jpg" alt="grappe" class="img-square">
                     </div>
                 </div>
             </main>
