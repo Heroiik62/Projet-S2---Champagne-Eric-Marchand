@@ -1,6 +1,6 @@
 <?php
 
-$name = split('/',  $_SERVER['PHP_SELF'])[1];
+$name = explode('/',  $_SERVER['PHP_SELF'])[1];
 $actives = ['', '', '', '', '', ''];
 
 switch ($name) {
